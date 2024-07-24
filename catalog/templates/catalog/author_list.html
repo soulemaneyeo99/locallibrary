@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>All Authors</h1>
+
+  <ul>
+    {% for author in author_list %}
+      <li>{{ author.first_name }} {{ author.last_name }}</li>
+    {% endfor %}
+  </ul>
+
+  <div class="pagination">
+    <span class="step-links">
+        {% if author_list.has_previous %}
+            <a href="?page=1">« first</a>
+            <a href="?page={{ author_list.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ author_list.number }} of {{ author_list.paginator.num_pages }}.
+        </span>
+
+        {% if author_list.has_next %}
+            <a href="?page={{ author_list.next_page_number }}">next</a>
+            <a href="?page={{ author_list.paginator.num_pages }}">last »</a>
+        {% endif %}
+    </span>
+  </div>
+{% endblock %}

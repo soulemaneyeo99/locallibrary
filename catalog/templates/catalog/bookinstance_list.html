@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Book Instances</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Book</th>
+        <th>Status</th>
+        <th>Due Date</th>
+        <th>ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for bookinstance in bookinstance_list %}
+        <tr>
+          <td>{{ bookinstance.book.title }}</td>
+          <td>{{ bookinstance.status }}</td>
+          <td>{{ bookinstance.due_back }}</td>
+          <td>{{ bookinstance.id }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

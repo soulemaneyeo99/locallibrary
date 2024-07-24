@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>{{ author.first_name }} {{ author.last_name }}</h1>
+  <p>Date of birth: {{ author.date_of_birth }}</p>
+  <p>Date of death: {{ author.date_of_death }}</p>
+
+  <h2>Books</h2>
+  <ul>
+    {% for book in books %}
+      <li>{{ book.title }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

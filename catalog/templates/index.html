@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Local Library Home</h1>
+  <h1>Bienvenue à la bibliothèque locale</h1>
+  <p>Nombre de livres : {{ num_books }}</p>
+  <p>Nombre de copies disponibles : {{ num_instances_available }}</p>
+  <p>Nombre de genres : {{ num_genres }}</p>
+  <p>Nombre de livres contenant le mot "{{ search_word }}" : {{ num_books_with_word }}</p>
+<ul>
+  <li><strong>Books:</strong> {{ num_books }}</li>
+  <li><strong>Copies:</strong> {{ num_instances }}</li>
+  <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
+  <li><strong>Authors:</strong> {{ num_authors }}</li>
+</ul>
+
+<p>
+  You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.
+</p>
+
+{% endblock %}
